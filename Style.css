@@ -1,54 +1,104 @@
-*{
+* {
     padding: 0px;
     margin: 0px;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
 }
-body{
-   background-image:  url('./assets/background.jpg');
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./assets/background.jpg");
 }
-.main{
+
+.main {
     margin-top: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-div>div{
-    border: 2px solid rgb(163, 163, 163);
-    box-shadow: 6px 6px 10px rgb(2, 27, 250);
+
+div>div {
+    border: 2px solid rgb(5, 122, 143);
+    box-shadow: 15px 15px 30px rgb(0, 0, 0);
     border-radius: 10px;
-    width: 336px;
-    height: 400px;
+    width: 350px;
+    height: 500px;
     padding: 20px;
     background-color: white;
-    
+
 }
+
 header {
     display: flex;
     justify-content: center;
 }
-header > img {
+
+header>img {
     max-width: 180px;
 }
-section > h1{
+
+section>h1 {
     margin-top: 10px;
     font-size: xx-large;
 }
-section > form{
+
+section>form {
     display: flex;
     flex-direction: column;
     padding: 25px;
 }
-form > label{
+
+form>label {
     margin-top: 15px;
+    font-weight: bold;
 }
-form > input{
-    padding: 4px;
+
+form>input,
+div>input {
+    padding: 7px;
+    font-size: 16px;
     margin: 7px 0 7px 0;
 }
-form>button{
-    background-color: blue;
-}
-section > h1{
+
+section>a {
     display: flex;
     justify-content: center;
 }
+
+form>button {
+    background-color: #36759486;
+    padding: 5px;
+    color: black;
+    font-weight: bold;
+    font-size: 19px;
+    padding: 14px 20px;
+    margin: 20px 0 0px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #367594;
+    color: white;
+}
+
+section>h1 {
+    display: flex;
+    justify-content: center;
+}
+
+input[type=email],
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=email]:focus {
+    background-color: #cccccc1f;
+  }
+input[type=password]:focus {
+    background-color: #cccccc1f;
+  }
