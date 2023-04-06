@@ -1,7 +1,8 @@
 function calculation() {
   let fNum = document.getElementsByName("num1")[0].value;
   let SNum = document.getElementsByName("num2")[0].value;
-  let Operator = document.getElementsByName("operator")[0].value;
+ let Operator= document.getElementById("+").innerHTML
+ console.log(Operator)
   let result;
   switch (Operator) {
     case "+":

@@ -11,20 +11,53 @@
 
 <body>
     <main>
-        <div class="AppStyle">
-            <h1 style="text-decoration: underline;">CALCULATOR</h1>
+        <div class="App">
+            <div class="AppStyle">
+                <h1 style="text-decoration: underline;">CALCULATOR</h1>
 
-            <input type="number" name="num1" placeholder="Enter Number">
-            <select name="operator">
+                <input type="number" name="num1" placeholder="Enter Number">
+                <table>
+                    <tr>
+                        <td>clr</td>
+                        <td id="/">/</td>
+                        <td id="*">*</td>
+                        <td id="-">-</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td rowspan="2">+</td>
+
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td rowspan="2"style="writing-mode: vertical-rl; text-orientation: upright;">enter</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">0</td>
+                        <td>.</td>
+                    </tr>
+                </table>
+                <!-- <select name="operator">
                 <option value="+">+</option>
                 <option value="-">-</option>
                 <option value="*">*</option>
                 <option value="/">/</option>
-            </select>
-            <input type="number" name="num2" placeholder="Enter Number">
-            <button onclick="calculation()">Calculate</button>
+            </select> -->
+                <!-- <input type="number" name="num2" placeholder="Enter Number"> -->
+                <button onclick="calculation()">Calculate</button>
 
-            <h3 id="heading" style="visibility:hidden;">Result: <span id="total"></span></h3>
+                <h3 id="heading" style="visibility:hidden;">Result: <span id="total"></span></h3>
+            </div>
         </div>
     </main>
     <script src="script.js"></script>
