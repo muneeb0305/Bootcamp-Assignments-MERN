@@ -12,16 +12,16 @@
 <body>
     <main>
         <div class="AppStyle">
-            <h1>Calculator</h1>
+            <h1 style="text-decoration: underline;">CALCULATOR</h1>
 
-            <input type="number" name="num1" required>
+            <input type="number" name="num1" placeholder="Enter Number">
             <select name="operator">
                 <option value="+">+</option>
                 <option value="-">-</option>
                 <option value="*">*</option>
                 <option value="/">/</option>
             </select>
-            <input type="number" name="num2" required>
+            <input type="number" name="num2" placeholder="Enter Number">
             <button onclick="calculation()">Calculate</button>
 
             <h3 id="heading" style="visibility:hidden;">Result: <span id="total"></span></h3>
