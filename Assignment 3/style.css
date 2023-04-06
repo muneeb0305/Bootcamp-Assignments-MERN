@@ -1,0 +1,48 @@
+main {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.AppStyle {
+    width: 25%;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    text-align: center;
+    border: 2px solid rgba(0, 0, 0, 0.293);
+    padding: 25px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.499);
+}
+
+input {
+    padding: 5px;
+    text-align: center;
+    border-radius: 50px;
+    border: 2px solid rgb(170, 169, 169);
+}
+
+select {
+    width: 20%;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 50px;
+    border: 2px solid rgb(170, 169, 169);
+}
+
+button {
+    padding: 5px;
+    border-radius: 50px;
+    background-color: transparent;
+    border: 2px solid rgb(170, 169, 169);
+    cursor: pointer;
+    transition: all linear 0.5s;
+}
+
+button:hover {
+    border: rgba(0, 0, 0, 0.293);
+    background-color: rgb(86, 86, 86);
+    color: white;
+    box-shadow: 0px 2px 10px rgb(114, 113, 113);
+
+}
