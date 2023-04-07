@@ -13,38 +13,39 @@
     <main>
         <div class="App">
             <div class="AppStyle">
-                <h1 style="text-decoration: underline;">CALCULATOR</h1>
+                <h1 style="color: rgb(85, 85, 85);">CALCULATOR</h1>
 
-                <input type="number" name="num1" placeholder="Enter Number">
+                <input type="text" name="textview">
                 <table>
                     <tr>
-                        <td>clr</td>
-                        <td id="/">/</td>
-                        <td id="*">*</td>
-                        <td id="-">-</td>
+                        <td value="" class="equalButton" onclick="document.getElementsByName('textview')[0].value = ' '">AC</td>
+                        <td value="/" class="operators" onclick="insert('/')">/</'td>
+                        <td value="*" class="operators" onclick="insert('*')">*</td>
+                        <td value="-" class="operators" onclick="insert('-')">-</td>
                     </tr>
                     <tr>
-                        <td>7</td>
-                        <td>8</td>
-                        <td>9</td>
-                        <td rowspan="2">+</td>
+                        <td value="7" onclick="insert(7)">7</td>
+                        <td value="8" onclick="insert(8)">8</td>
+                        <td value="9" onclick="insert(9)">9</td>
+                        <td rowspan="2" class="operators" value="+" onclick="insert('+')">+</td>
 
                     </tr>
                     <tr>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>6</td>
-                        
+                        <td value="4" onclick="insert(4)">4</td>
+                        <td value="5" onclick="insert(5)">5</td>
+                        <td value="6" onclick="insert(6)">6</td>
+
                     </tr>
                     <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td rowspan="2"style="writing-mode: vertical-rl; text-orientation: upright;">enter</td>
+                        <td value="2" onclick="insert(1)">1</td>
+                        <td value="2" onclick="insert(2)">2</td>
+                        <td value="3" onclick="insert(3)">3</td>
+                        <td rowspan="2" class="equalButton" onclick="equal()">
+                            =</td>
                     </tr>
                     <tr>
-                        <td colspan="2">0</td>
-                        <td>.</td>
+                        <td colspan="2" value="0" onclick="insert(0)">0</td>
+                        <td value="." onclick="insert('.')">.</td>
                     </tr>
                 </table>
                 <!-- <select name="operator">
@@ -54,9 +55,9 @@
                 <option value="/">/</option>
             </select> -->
                 <!-- <input type="number" name="num2" placeholder="Enter Number"> -->
-                <button onclick="calculation()">Calculate</button>
+                <!-- <button onclick="calculation()">Calculate</button>
 
-                <h3 id="heading" style="visibility:hidden;">Result: <span id="total"></span></h3>
+                <h3 id="heading" style="visibility:hidden;">Result: <span id="total"></span></h3> -->
             </div>
         </div>
     </main>
