@@ -7,10 +7,8 @@ import Col from "react-bootstrap/Col";
 import Select from "./components/Select";
 
 function App() {
-  const [selectedCountry, setSelectedCountry] = useState(null);
-  const [WeatherData, setWeatherData] = useState(null);
-
-  const obj = [
+ const Key = "916513af9f643ea8b91f0dd2ea1ab498"
+  const countryList = [
     {
       id: "1",
       country: "Pakistan",
@@ -27,28 +25,24 @@ function App() {
       cities: ["Sydney", "Melbourne", "Brisbane"],
     },
   ];
-  const options = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": "e585921683msh61b40603e3229f9p11cee5jsn70729d60ec1b",
-      "X-RapidAPI-Host": "weather-by-api-ninjas.p.rapidapi.com",
-    },
-  };
+  const [selectedCountry, setSelectedCountry] = useState(countryList[0]);
+  const [selectedCity, setSelectedCity] = useState("Select City");
+  const [WeatherData, setWeatherData] = useState(null);
   const handleCity = (e) => {
-    let city = selectedCountry.cities[e.target.value];
+    setSelectedCity(selectedCountry.cities[e.target.value]);
     fetch(
-      `https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=${city}`,
-      options
+      `https://api.openweathermap.org/data/2.5/weather?q=${selectedCountry.cities[e.target.value]}&appid=${Key}`
     )
       .then((response) => response.json())
       .then((response) => {
-        setWeatherData(response);
+        setWeatherData(response.main);
       })
       .catch((err) => console.error(err));
   };
   const handleChange = (e) => {
-    setSelectedCountry(obj.filter((x) => x.id === e.target.value)[0]);
+    setSelectedCountry(countryList.filter((x) => x.id === e.target.value)[0]);
     setWeatherData(null);
+    setSelectedCity("Select City")
   };
   return (
     <>
@@ -58,19 +52,20 @@ function App() {
           <Row className="gap-5">
             <Col>
               <Select
-                select={"Select Country"}
-                country={obj.map((x) => ({ value: x.country, id: x.id }))}
+                country={countryList.map((x) => ({ value: x.country, id: x.id }))}
                 Change={handleChange}
+                selected={selectedCountry.country}
+
               />
             </Col>
             <Col>
               {selectedCountry && (
                 <Select
-                  select={"Select City"}
                   country={selectedCountry.cities.map((item, index) => ({
                     id: index,
                     value: item,
                   }))}
+                  selected={selectedCity}
                   Change={handleCity}
                 />
               )}
@@ -80,13 +75,13 @@ function App() {
             <Col>
               <Card
                 title={"Temperature"}
-                temp={WeatherData && WeatherData.temp + "°C"}
+                temp={WeatherData && parseInt( WeatherData.temp-273.15) + "°C"}
               />
             </Col>
             <Col>
               <Card
                 title={"Feels Like"}
-                temp={WeatherData && WeatherData.feels_like + "°C"}
+                temp={WeatherData &&  parseInt( WeatherData.feels_like-273.15) + "°C"}
               />
             </Col>
             <Col>

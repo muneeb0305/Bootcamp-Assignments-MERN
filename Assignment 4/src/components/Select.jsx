@@ -1,9 +1,8 @@
 import Form from "react-bootstrap/Form";
-
 function Select(props) {
   return (
-    <Form.Select aria-label="Default select example" onChange={props.Change}>
-    <option  defaultValue hidden  value="">{props.select}</option>
+    <Form.Select aria-label="Default select example" value={props.selected} onChange={props.Change}>
+    <option  defaultValue hidden  value="">{props.selected}</option>
       {props.country.map((item) => {
         return (
           <option key={item.id} value={item.id}>
