@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Card from "./components/Card";
 import { Container } from "react-bootstrap";
@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col";
 import Select from "./components/Select";
 
 function App() {
- const Key = "916513af9f643ea8b91f0dd2ea1ab498"
+  const Key = "916513af9f643ea8b91f0dd2ea1ab498";
   const countryList = [
     {
       id: "1",
@@ -31,7 +31,9 @@ function App() {
   const handleCity = (e) => {
     setSelectedCity(selectedCountry.cities[e.target.value]);
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${selectedCountry.cities[e.target.value]}&appid=${Key}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${
+        selectedCountry.cities[e.target.value]
+      }&appid=${Key}`
     )
       .then((response) => response.json())
       .then((response) => {
@@ -42,7 +44,7 @@ function App() {
   const handleChange = (e) => {
     setSelectedCountry(countryList.filter((x) => x.id === e.target.value)[0]);
     setWeatherData(null);
-    setSelectedCity("Select City")
+    setSelectedCity("Select City");
   };
   return (
     <>
@@ -52,10 +54,12 @@ function App() {
           <Row className="gap-5">
             <Col>
               <Select
-                country={countryList.map((x) => ({ value: x.country, id: x.id }))}
+                country={countryList.map((x) => ({
+                  value: x.country,
+                  id: x.id,
+                }))}
                 Change={handleChange}
                 selected={selectedCountry.country}
-
               />
             </Col>
             <Col>
@@ -75,13 +79,16 @@ function App() {
             <Col>
               <Card
                 title={"Temperature"}
-                temp={WeatherData && parseInt( WeatherData.temp-273.15) + "°C"}
+                temp={WeatherData && parseInt(WeatherData.temp - 273.15) + "°C"}
               />
             </Col>
             <Col>
               <Card
                 title={"Feels Like"}
-                temp={WeatherData &&  parseInt( WeatherData.feels_like-273.15) + "°C"}
+                temp={
+                  WeatherData &&
+                  parseInt(WeatherData.feels_like - 273.15) + "°C"
+                }
               />
             </Col>
             <Col>
