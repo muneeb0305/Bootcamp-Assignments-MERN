@@ -20,10 +20,9 @@ function FormComponent(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (UpdateData) {
-      const updatedUser = { ...User, ID: UpdateData.ID };
-      console.log({ ...User, ID: UpdateData.ID} );
+      const updatedUser = { ...User };
       const updatedData = Data.map((data) =>
-        data.ID === UpdateData.ID ? updatedUser : data
+      data.ID === UpdateData.ID ? updatedUser : data
       );
       setData(updatedData);
       setUpdateData(null);
