@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import Context from "../Context/Context";
 
-function FormComponent({ handleSetData, handleViewData, City, UpdateData, setUpdateData, showAlert }) {
-
-  const [counter, setCounter] = useState(0);
+function FormComponent() {
+  const {City, handleSetData, handleViewData, UpdateData, setUpdateData, showAlert} = useContext(Context)
+  let IDCounter = Object.keys(handleViewData()).length +1;
   const [User, setUser] = useState({
-    ID: counter,
+    ID: IDCounter,
     name: "",
     address: "",
     city: "",
@@ -28,13 +29,12 @@ function FormComponent({ handleSetData, handleViewData, City, UpdateData, setUpd
     }
     // If data is not exist then new data created 
     else {
-      setCounter(counter + 1);
-      const newUser = { ...User, ID: counter + 1 };
+      const newUser = { ...User, ID: IDCounter };
       const newData = [...handleViewData(), newUser];
       handleSetData(newData);
       showAlert(" Data Added Successfully", "success");
     }
-    setUser({ ID: counter, name: "", address: "", city: "" });
+    setUser({ ID: IDCounter, name: "", address: "", city: "" });
   };
   // Updated data shows in form
   useEffect(() => {

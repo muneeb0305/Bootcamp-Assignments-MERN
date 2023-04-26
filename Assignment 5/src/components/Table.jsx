@@ -1,8 +1,10 @@
 import { BiEdit } from "react-icons/bi";
 import { AiOutlineDelete } from "react-icons/ai";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import Context from "../Context/Context";
 
-function TableComponent({ handleDelete, handleViewData, handleUpdateData, City }) {
+function TableComponent() {
+  const {handleDelete, handleViewData, handleUpdateData, City} = useContext(Context)
   const [Search, setSearch] = useState("")
   const handleSearch = (e) => {
     setSearch(e.target.value)
