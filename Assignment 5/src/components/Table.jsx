@@ -32,7 +32,7 @@ function TableComponent({ handleDelete, handleViewData, handleUpdateData, City }
         <tbody>
           {filteredData.map((data, index) => (
             <tr key={index}>
-              <td>{index + 1}</td>
+              <td>{data.ID}</td>
               <td>{data.name}</td>
               <td>{data.address}</td>
               <td>{City[data.city]}</td>
