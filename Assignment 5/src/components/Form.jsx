@@ -25,7 +25,6 @@ function FormComponent({ handleSetData, handleViewData, City, UpdateData, setUpd
       showAlert(" Data Updated Successfully", "primary");
       handleSetData(updatedData);
       setUpdateData(null);
-
     }
     // If data is not exist then new data created 
     else {
@@ -37,7 +36,7 @@ function FormComponent({ handleSetData, handleViewData, City, UpdateData, setUpd
     }
     setUser({ ID: counter, name: "", address: "", city: "" });
   };
-  // Updated data sjows in form
+  // Updated data shows in form
   useEffect(() => {
     if (UpdateData) {
       setUser({
@@ -51,7 +50,6 @@ function FormComponent({ handleSetData, handleViewData, City, UpdateData, setUpd
 
   return (
     <div className="container w-50 mt-3">
-
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
