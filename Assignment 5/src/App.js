@@ -38,7 +38,7 @@ function App() {
   }, []);
   // Alerts
   const showAlert = (msg, type) => {
-    setAlert({msg,type});
+    setAlert({ msg, type });
     setTimeout(() => {
       setAlert(null);
     }, 2000);

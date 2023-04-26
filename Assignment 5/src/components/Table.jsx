@@ -13,11 +13,11 @@ function TableComponent({ handleDelete, handleViewData, handleUpdateData, City }
     }
     return false;
   });
-  
+
   return (
     <div className="container mt-4">
       <div className="p-1 bg-light rounded rounded-pill border border-2  shadow-sm mb-4 w-25">
-          <input value={Search} onChange={handleSearch} type="search" placeholder="Search by Name" aria-describedby="button-addon1" className="form-control border-0 bg-light" />
+        <input value={Search} onChange={handleSearch} type="search" placeholder="Search by Name" aria-describedby="button-addon1" className="form-control border-0 bg-light" />
       </div>
       <table className="table table-striped text-center">
         <thead>
