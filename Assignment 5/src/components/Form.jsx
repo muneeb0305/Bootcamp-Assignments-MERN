@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import Context from "../Context/Context";
 
 function FormComponent() {
-  const {City, handleSetData, handleViewData, UpdateData, setUpdateData, showAlert} = useContext(Context)
-  let IDCounter = Object.keys(handleViewData()).length +1;
+  const { City, handleSetData, handleViewData, UpdateData, setUpdateData, showAlert } = useContext(Context)
+  let IDCounter = Object.keys(handleViewData()).length + 1;
   const [User, setUser] = useState({
     ID: IDCounter,
     name: "",

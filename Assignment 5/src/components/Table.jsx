@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import Context from "../Context/Context";
 
 function TableComponent() {
-  const {handleDelete, handleViewData, handleUpdateData, City} = useContext(Context)
+  const { handleDelete, handleViewData, handleUpdateData, City } = useContext(Context)
   const [Search, setSearch] = useState("")
   const handleSearch = (e) => {
     setSearch(e.target.value)

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Context from './Context';
 
-const States = ({children}) => {
+const States = ({ children }) => {
     const [SessionData, setSessionData] = useState([]);
     const [UpdateData, setUpdateData] = useState(null);
     const [alert, setAlert] = useState(null); // Define the alert value here
@@ -41,7 +41,7 @@ const States = ({children}) => {
     };
     return (
         <div>
-            <Context.Provider value={{alert, SessionData, setSessionData, City, handleSetData, handleViewData, handleDelete, handleUpdateData, UpdateData, setUpdateData, showAlert}}>
+            <Context.Provider value={{ alert, SessionData, setSessionData, City, handleSetData, handleViewData, handleDelete, handleUpdateData, UpdateData, setUpdateData, showAlert }}>
                 {children}
             </Context.Provider>
         </div>
