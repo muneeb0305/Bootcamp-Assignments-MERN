@@ -1,38 +1,43 @@
 import React, { useEffect, useState } from "react";
 
-function FormComponent(props) {
-  const [counter, setcounter] = useState(0);
+function FormComponent({ handleSetData, handleViewData, City, UpdateData, setUpdateData, showAlert }) {
+
+  const [counter, setCounter] = useState(0);
   const [User, setUser] = useState({
     ID: counter,
     name: "",
     address: "",
     city: "",
   });
-  const Data = props.Data;
-  const setData = props.setData;
-  const City = props.City;
-  const UpdateData = props.UpdateData;
-  const setUpdateData = props.setUpdateData;
-
+  //Set User
   const handleChange = (e) => {
     setUser({ ...User, [e.target.name]: e.target.value });
   };
+  // Submit User Form
   const handleSubmit = (e) => {
     e.preventDefault();
+    // If there's data in Update state then this condition True 
     if (UpdateData) {
       const updatedUser = { ...User };
-      const updatedData = Data.map((data) =>
-      data.ID === UpdateData.ID ? updatedUser : data
+      const updatedData = handleViewData().map((data) =>
+        data.ID === UpdateData.ID ? updatedUser : data
       );
-      setData(updatedData);
+      showAlert(" Data Updated Successfully", "primary");
+      handleSetData(updatedData);
       setUpdateData(null);
-    } else {
-      setcounter(counter + 1);
+
+    }
+    // If data is not exist then new data created 
+    else {
+      setCounter(counter + 1);
       const newUser = { ...User, ID: counter + 1 };
-      setData([...Data, newUser]);
+      const newData = [...handleViewData(), newUser];
+      handleSetData(newData);
+      showAlert(" Data Added Successfully", "success");
     }
     setUser({ ID: counter, name: "", address: "", city: "" });
   };
+  // Updated data sjows in form
   useEffect(() => {
     if (UpdateData) {
       setUser({
@@ -46,6 +51,7 @@ function FormComponent(props) {
 
   return (
     <div className="container w-50 mt-3">
+
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
