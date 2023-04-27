@@ -34,7 +34,7 @@ function TableComponent() {
         <tbody>
           {filteredData.map((data, index) => (
             <tr key={index}>
-              <td>{data.ID}</td>
+              <td>{index+1}</td>
               <td>{data.name}</td>
               <td>{data.address}</td>
               <td>{City[data.city]}</td>

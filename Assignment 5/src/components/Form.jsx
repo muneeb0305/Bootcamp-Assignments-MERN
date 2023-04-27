@@ -3,7 +3,7 @@ import Context from "../Context/Context";
 
 function FormComponent() {
   const { City, handleSetData, handleViewData, UpdateData, setUpdateData, showAlert } = useContext(Context)
-  let IDCounter = Object.keys(handleViewData()).length + 1;
+  let IDCounter = Date.now()
   const [User, setUser] = useState({
     ID: IDCounter,
     name: "",

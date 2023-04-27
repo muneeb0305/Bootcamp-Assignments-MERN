@@ -4,7 +4,7 @@ import Context from './Context';
 const States = ({ children }) => {
     const [SessionData, setSessionData] = useState([]);
     const [UpdateData, setUpdateData] = useState(null);
-    const [alert, setAlert] = useState(null); // Define the alert value here
+    const [alert, setAlert] = useState(null);
     const City = ["Peshawar", "Lahore", "Karachi", "Islamabad"];
 
     // Set Data to local Storage
